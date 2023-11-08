@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  api:
+    build:
+      context: .
+      platforms:
+        - linux/amd64
+    image: credit-scoring
+    platform: linux/amd64
+    container_name: api
+    ports:
+      - 8000:8000
+    working_dir: /app/
+    entrypoint: python
+    command: [./src/api.py]
